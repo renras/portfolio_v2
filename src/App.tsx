@@ -1,6 +1,8 @@
 import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+
 import NavBar from "./Components/NavBar/NavBar";
+import Home from "./Pages/Home/Home";
 
 const darkTheme = createTheme({
   palette: {
@@ -11,7 +13,10 @@ const darkTheme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <NavBar />
+      <CssBaseline>
+        <NavBar />
+        <Home />
+      </CssBaseline>
     </ThemeProvider>
   );
 };
