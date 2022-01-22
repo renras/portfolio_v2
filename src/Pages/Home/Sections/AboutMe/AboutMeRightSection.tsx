@@ -23,11 +23,11 @@ const AboutMeRightSection = () => {
         alignItems: "flex-start",
       }}
     >
-      <Title title="Skills" />
+      <Title>Skills</Title>
       <Box sx={{ display: "flex", flexFlow: "row wrap", gap: "1rem" }}>
-        {skills.map((skill) => {
+        {skills.map((skill, index) => {
           return (
-            <Paper elevation={2} sx={{ padding: ".5rem 1rem" }}>
+            <Paper key={index} elevation={2} sx={{ padding: ".5rem 1rem" }}>
               <Typography>{skill}</Typography>
             </Paper>
           );

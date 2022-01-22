@@ -14,7 +14,7 @@ const AboutMeLeftSection = () => {
         alignItems: "flex-start",
       }}
     >
-      <Title title="About Me" />
+      <Title>About Me</Title>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
         <Paragraph>
           &emsp;My name is Renzo Visperas. I like to craft solid and scalable

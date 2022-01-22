@@ -19,8 +19,8 @@ const NavBar = () => {
             RZV
           </Typography>
           <Box sx={{ display: "flex", gap: "1rem" }}>
-            {buttons.map((button) => {
-              return <Button>{button}</Button>;
+            {buttons.map((button, index) => {
+              return <Button key={index}>{button}</Button>;
             })}
           </Box>
         </Toolbar>
