@@ -1,7 +1,7 @@
 import React from "react";
-import { Typography, Box, Paper } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { Box } from "@mui/material";
 import Title from "../../../../Components/Title/Title";
+import Paragraph from "../../../../Components/Paragraph/Paragraph";
 
 const AboutMeLeftSection = () => {
   return (
@@ -16,18 +16,19 @@ const AboutMeLeftSection = () => {
     >
       <Title title="About Me" />
       <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-        <Typography variant="body1" sx={{ color: `${grey[300]}` }}>
-          My name is Renzo Visperas. I like to craft solid and scalable frontend
-          products with great user experiences. I use best practices and web
-          standards guidelines, resulting in semantic HTML and CSS.
-        </Typography>
-        <Typography variant="body1" sx={{ color: `${grey[300]}` }}>
-          For building my projects, I like to design my layout using Figma, then
-          Visual Studio Code to produce clean semantic HTML and CSS. I like to
-          build my user interfaces using a JavaScript library called React. I
-          also implement Typescript to have more control over my project and for
-          efficient development.
-        </Typography>
+        <Paragraph>
+          &emsp;My name is Renzo Visperas. I like to craft solid and scalable
+          frontend products with great user experiences. I use best practices
+          and web standards guidelines, resulting in semantic HTML and CSS.
+        </Paragraph>
+        <Paragraph>
+          &emsp;For building my projects, I like to design my web application
+          using various tools like SASS, Tailwind CSS, Bootstrap, Material UI
+          and Styled Components. I like to build my user interfaces using a
+          JavaScript libraries such as Jquery and React. I also implement
+          Typescript to have more control over my project and for efficient
+          development. I also do my own custom webpack configurations.
+        </Paragraph>
       </Box>
     </Box>
   );
