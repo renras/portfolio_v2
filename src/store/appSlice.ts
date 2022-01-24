@@ -15,11 +15,13 @@ export const getProjects = createAsyncThunk(
 interface CounterState {
   status: string;
   projects: Object;
+  technologies: string[];
 }
 
 const initialState: CounterState = {
   status: "idle",
   projects: {},
+  technologies: [],
 };
 
 export const appSlice = createSlice({
@@ -33,7 +35,22 @@ export const appSlice = createSlice({
     builder.addCase(getProjects.fulfilled, (state, action) => {
       state.status = "fulfilled";
       state.projects = action.payload;
+
+      let technologies: Set<string> = new Set([]);
+
+      interface Project {
+        technologies: string[];
+      }
+
+      action.payload.forEach((project: Project) => {
+        const set: Set<string> = new Set(project.technologies);
+        technologies = new Set([...technologies, ...set]);
+      });
+
+      state.technologies = Array.from(technologies);
+
       console.log(state.projects);
+      console.log(state.technologies);
     });
     builder.addCase(getProjects.rejected, (state) => {
       state.status = "failed";
@@ -42,8 +59,5 @@ export const appSlice = createSlice({
 });
 
 export const {} = appSlice.actions;
-
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.app.value;
 
 export default appSlice.reducer;

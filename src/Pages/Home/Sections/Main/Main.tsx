@@ -1,10 +1,5 @@
 import React from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
-
-const Span = styled("span")(({ theme }) => ({
-  color: theme.palette.primary.main,
-}));
 
 const Main = () => {
   const buttons: string[] = ["CONTACT ME", "CHECK MY WORK"];
@@ -27,7 +22,10 @@ const Main = () => {
               sx={{ textAlign: "center" }}
             >
               Hello, I'm Ren and <br />
-              I'm a <Span>Front End Developer</Span>
+              I'm a{" "}
+              <Typography variant="h2" component="span" color="primary">
+                Front End Developer
+              </Typography>
             </Typography>
             <Typography
               variant="h5"
