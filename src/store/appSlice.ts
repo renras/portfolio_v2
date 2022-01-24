@@ -1,44 +1,49 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
+import axios from "axios";
 
-const fetchUserById = createAsyncThunk(
-  "users/fetchByIdStatus",
-  async (userId, thunkAPI) => {
-    const response = await userAPI.fetchById(userId);
+export const getProjects = createAsyncThunk(
+  "projects/getProjects",
+  async () => {
+    const response = await axios.get(
+      "https://renras.github.io/personal-api/personal-projects.json"
+    );
     return response.data;
   }
 );
 
 interface CounterState {
-  value: number;
+  status: string;
+  projects: Object;
 }
 
-// Define the initial state using that type
 const initialState: CounterState = {
-  value: 0,
+  status: "idle",
+  projects: {},
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
-  // `createSlice` will infer the state type from the `initialState` argument
+export const appSlice = createSlice({
+  name: "app",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getProjects.pending, (state) => {
+      state.status = "pending";
+    });
+    builder.addCase(getProjects.fulfilled, (state, action) => {
+      state.status = "fulfilled";
+      state.projects = action.payload;
+      console.log(state.projects);
+    });
+    builder.addCase(getProjects.rejected, (state) => {
+      state.status = "failed";
+    });
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const {} = appSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value;
+// export const selectCount = (state: RootState) => state.app.value;
 
-export default counterSlice.reducer;
+export default appSlice.reducer;
