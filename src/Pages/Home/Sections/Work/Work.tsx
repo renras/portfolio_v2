@@ -21,15 +21,19 @@ const Work = () => {
     <Container maxWidth="xl">
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
           padding: "10rem 0",
-          gap: "5rem",
+          textAlign: "center",
         }}
       >
-        <Title center>Projects</Title>
-        <Stack direction="row" spacing={2}>
+        <Title center sx={{ display: "inline-block" }}>
+          Projects
+        </Title>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          sx={{ marginTop: "5rem" }}
+        >
           {technologies.map((technology, index) => {
             return (
               <Chip
