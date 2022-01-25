@@ -9,12 +9,14 @@ const PaperStyled = styled(Paper)(({ theme }) => ({
 const Title = ({
   children,
   center,
+  sx,
 }: {
   children: string;
   center?: boolean;
+  sx?: Object;
 }) => {
   return (
-    <Box>
+    <Box sx={sx}>
       <Typography variant="h2" component="h2">
         {children}
       </Typography>

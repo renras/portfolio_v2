@@ -7,21 +7,17 @@ const AboutMeLeftSection = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
         flex: "1 1 0",
-        gap: "5rem",
-        alignItems: "flex-start",
       }}
     >
-      <Title>About Me</Title>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <Title sx={{ display: "inline-block" }}>About Me</Title>
+      <Box sx={{ marginTop: "5rem" }}>
         <Paragraph>
           &emsp;My name is Renzo Visperas. I like to craft solid and scalable
           frontend products with great user experiences. I use best practices
           and web standards guidelines, resulting in semantic HTML and CSS.
         </Paragraph>
-        <Paragraph>
+        <Paragraph sx={{ marginTop: "2rem" }}>
           &emsp;For building my projects, I like to design my web application
           using various tools like SASS, Tailwind CSS, Bootstrap, Material UI
           and Styled Components. I like to build my user interfaces using a
