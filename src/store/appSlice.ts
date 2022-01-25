@@ -20,7 +20,7 @@ interface CounterState {
 
 const initialState: CounterState = {
   status: "idle",
-  projects: {},
+  projects: [],
   technologies: [],
 };
 
@@ -48,9 +48,6 @@ export const appSlice = createSlice({
       });
 
       state.technologies = Array.from(technologies);
-
-      console.log(state.projects);
-      console.log(state.technologies);
     });
     builder.addCase(getProjects.rejected, (state) => {
       state.status = "failed";

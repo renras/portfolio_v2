@@ -1,9 +1,8 @@
 import React from "react";
-import { Container, Typography, Box, Button, ButtonGroup } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import MainButtonGroup from "./MainButtonGroup";
 
 const Main = () => {
-  const buttons: string[] = ["CONTACT ME", "CHECK MY WORK"];
-
   return (
     <Container
       maxWidth={false}
@@ -35,27 +34,7 @@ const Main = () => {
         >
           I focus on writing clean, elegant and efficient code.
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            gap: "2rem",
-            justifyContent: "center",
-            marginTop: "5rem",
-          }}
-        >
-          {buttons.map((button, index) => {
-            return (
-              <Button
-                size="large"
-                variant={`${index == 0 ? "contained" : "outlined"}`}
-                sx={{ fontWeight: "bold" }}
-                key={index}
-              >
-                {button}
-              </Button>
-            );
-          })}
-        </Box>
+        <MainButtonGroup />
       </Container>
     </Container>
   );
