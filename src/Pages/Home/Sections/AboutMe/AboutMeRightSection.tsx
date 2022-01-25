@@ -16,15 +16,18 @@ const AboutMeRightSection = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "5rem",
         flex: "1 1 0",
-        alignItems: "flex-start",
       }}
     >
-      <Title>Skills</Title>
-      <Box sx={{ display: "flex", flexFlow: "row wrap", gap: "1rem" }}>
+      <Title sx={{ display: "inline-block" }}>Skills</Title>
+      <Box
+        sx={{
+          marginTop: "5rem",
+          display: "flex",
+          flexFlow: "row wrap",
+          gap: "1rem",
+        }}
+      >
         {skills.map((skill, index) => {
           return (
             <Paper key={index} elevation={2} sx={{ padding: ".5rem 1rem" }}>
