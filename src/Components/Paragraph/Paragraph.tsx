@@ -3,9 +3,17 @@ import { grey } from "@mui/material/colors";
 
 import React from "react";
 
-const Paragraph = ({ children, sx }: { children: string; sx?: Object }) => {
+const Paragraph = ({
+  children,
+  variant = "body1",
+  sx,
+}: {
+  children: string;
+  sx?: Object;
+  variant?: any;
+}) => {
   return (
-    <Typography sx={{ color: `${grey[300]}`, lineHeight: "2rem", ...sx }}>
+    <Typography variant={variant} sx={{ color: `${grey[300]}`, ...sx }}>
       {children}
     </Typography>
   );

@@ -26,7 +26,6 @@ const ProjectsChips = () => {
             color={index === activeChipIndex ? "primary" : "default"}
             key={index}
             label={`${technology}`}
-            size="small"
             sx={{ padding: "1rem 1rem" }}
             onClick={() => chipHandleClick(index)}
           ></Chip>
