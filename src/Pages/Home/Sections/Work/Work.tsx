@@ -4,6 +4,7 @@ import { Container, Box } from "@mui/material";
 import { useAppSelector } from "../../../../store/hooks";
 import { Chip } from "@mui/material";
 import { Stack } from "@mui/material";
+import { Card } from "@mui/material";
 
 const Work = () => {
   const [activeChipIndex, setActiveChipIndex] = useState(0);
@@ -42,6 +43,9 @@ const Work = () => {
             );
           })}
         </Stack>
+        <Box sx={{ display: "flex", gap: "5rem" }}>
+          <Card></Card>
+        </Box>
       </Box>
     </Container>
   );

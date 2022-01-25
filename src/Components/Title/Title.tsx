@@ -14,13 +14,7 @@ const Title = ({
   center?: boolean;
 }) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: `${center && "center"}`,
-      }}
-    >
+    <Box>
       <Typography variant="h2" component="h2">
         {children}
       </Typography>
@@ -28,6 +22,7 @@ const Title = ({
         sx={{
           width: "40%",
           height: ".25rem",
+          margin: `${center ? "auto" : "0"}`,
         }}
       ></PaperStyled>
     </Box>
