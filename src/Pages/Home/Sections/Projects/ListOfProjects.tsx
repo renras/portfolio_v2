@@ -13,7 +13,14 @@ import {
 import Paragraph from "../../../../Components/Paragraph/Paragraph";
 
 const ListOfProjects = () => {
-  const projects: any = useAppSelector((state) => state.app.projects);
+  const activeChip: string = useAppSelector((state) => state.app.activeChip);
+  const projects: any[] = useAppSelector((state) => state.app.projects).filter(
+    (project) => {
+      return activeChip !== "All"
+        ? project.technologies.includes(activeChip)
+        : !project.technologies.includes(activeChip);
+    }
+  );
 
   return (
     <Box
@@ -21,6 +28,7 @@ const ListOfProjects = () => {
         display: "flex",
         gap: "5rem",
         marginTop: "5rem",
+        justifyContent: "center",
       }}
     >
       {projects.map((project: any, index: number) => {
@@ -28,7 +36,7 @@ const ListOfProjects = () => {
           <Card
             key={index}
             onClick={() => window.open(project.link)}
-            sx={{ flex: "1 1 0", cursor: "pointer" }}
+            sx={{ cursor: "pointer", maxWidth: "330.67px" }}
           >
             <CardMedia
               component="img"

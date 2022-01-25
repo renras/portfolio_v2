@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Chip, Stack } from "@mui/material";
-import { useAppSelector } from "../../../../store/hooks";
+import { useAppSelector, useAppDispatch } from "../../../../store/hooks";
+import { setActiveChip } from "../../../../store/appSlice";
 
 const ProjectsChips = () => {
-  const [activeChipIndex, setActiveChipIndex] = useState(0);
+  const dispatch = useAppDispatch();
+  const activeChip: string = useAppSelector((state) => state.app.activeChip);
   const technologies: string[] = [
     "All",
     ...useAppSelector((state) => state.app.technologies),
   ];
 
-  const chipHandleClick = (index: number) => {
-    setActiveChipIndex(index);
+  const chipHandleClick = (technology: string) => {
+    dispatch(setActiveChip(technology));
   };
 
   return (
@@ -23,11 +25,11 @@ const ProjectsChips = () => {
       {technologies.map((technology, index) => {
         return (
           <Chip
-            color={index === activeChipIndex ? "primary" : "default"}
+            color={technology === activeChip ? "primary" : "default"}
             key={index}
             label={`${technology}`}
             sx={{ padding: "1rem 1rem" }}
-            onClick={() => chipHandleClick(index)}
+            onClick={() => chipHandleClick(technology)}
           ></Chip>
         );
       })}

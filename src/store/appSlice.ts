@@ -14,20 +14,26 @@ export const getProjects = createAsyncThunk(
 
 interface CounterState {
   status: string;
-  projects: Object;
+  projects: any[];
   technologies: string[];
+  activeChip: string;
 }
 
 const initialState: CounterState = {
   status: "idle",
   projects: [],
   technologies: [],
+  activeChip: "All",
 };
 
 export const appSlice = createSlice({
   name: "app",
   initialState,
-  reducers: {},
+  reducers: {
+    setActiveChip: (state, action: PayloadAction<string>) => {
+      state.activeChip = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProjects.pending, (state) => {
       state.status = "pending";
@@ -55,6 +61,6 @@ export const appSlice = createSlice({
   },
 });
 
-export const {} = appSlice.actions;
+export const { setActiveChip } = appSlice.actions;
 
 export default appSlice.reducer;
