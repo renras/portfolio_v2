@@ -7,18 +7,36 @@ const Form = () => {
       component="form"
       action="https://formsubmit.co/renzovisperas07@gmail.com"
       method="POST"
-      sx={{ display: "inline-flex", width: "60%" }}
       container
       spacing={2}
+      sx={{ display: "inline-flex", width: "60%" }}
     >
       <Grid item xs={6}>
-        <TextField required type="text" placeholder="Name" fullWidth />
+        <TextField
+          required
+          type="text"
+          placeholder="Name"
+          fullWidth
+          name="name"
+        ></TextField>
       </Grid>
       <Grid item xs={6}>
-        <TextField required type="email" placeholder="Email" fullWidth />
+        <TextField
+          required
+          type="email"
+          placeholder="Email"
+          name="email"
+          fullWidth
+        />
       </Grid>
       <Grid item xs={12}>
-        <TextField required type="text" placeholder="Subject" fullWidth />
+        <TextField
+          required
+          type="text"
+          placeholder="Subject"
+          name="subject"
+          fullWidth
+        />
       </Grid>
       <Grid item xs={12}>
         <TextField
@@ -28,6 +46,7 @@ const Form = () => {
           placeholder="Message"
           fullWidth
           rows={5}
+          name="message"
         />
       </Grid>
       <Grid item xs={12}>
