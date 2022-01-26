@@ -1,7 +1,26 @@
 import React from "react";
-import { TextField, Button, Grid } from "@mui/material";
+import { TextField, Button, Grid, Paper } from "@mui/material";
 
 const Form = () => {
+  const textFields = [
+    {
+      name: "name",
+      type: "text",
+    },
+    {
+      name: "email",
+      type: "email",
+    },
+    {
+      name: "subject",
+      type: "text",
+    },
+    {
+      name: "message",
+      type: "text",
+    },
+  ];
+
   return (
     <Grid
       component="form"
@@ -11,44 +30,31 @@ const Form = () => {
       spacing={2}
       sx={{ display: "inline-flex", width: "60%" }}
     >
-      <Grid item xs={6}>
-        <TextField
-          required
-          type="text"
-          placeholder="Name"
-          fullWidth
-          name="name"
-        ></TextField>
-      </Grid>
-      <Grid item xs={6}>
-        <TextField
-          required
-          type="email"
-          placeholder="Email"
-          name="email"
-          fullWidth
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <TextField
-          required
-          type="text"
-          placeholder="Subject"
-          name="subject"
-          fullWidth
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <TextField
-          multiline
-          required
-          type="text"
-          placeholder="Message"
-          fullWidth
-          rows={5}
-          name="message"
-        />
-      </Grid>
+      {textFields.map((textField, index) => {
+        return (
+          <Grid
+            key={index}
+            item
+            xs={
+              textField.name === "name" || textField.name === "email" ? 6 : 12
+            }
+          >
+            <TextField
+              required
+              type={textField.type}
+              placeholder={
+                textField.name.charAt(0).toUpperCase() + textField.name.slice(1)
+              }
+              fullWidth
+              name={textField.name}
+              {...(textField.name === "message" && {
+                rows: 5,
+                multiline: true,
+              })}
+            ></TextField>
+          </Grid>
+        );
+      })}
       <Grid item xs={12}>
         <Button
           variant="contained"

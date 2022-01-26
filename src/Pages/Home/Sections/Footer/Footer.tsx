@@ -6,7 +6,7 @@ import Title from "../../../../Components/Title/Title";
 const Footer = () => {
   const contactInfo: any[] = [
     ["PHONE :", "+639455820565"],
-    ["ADDRESS", `#563 Rizal Street, Poblacion,\nMangaldan, Pangasinan`],
+    ["ADDRESS :", `#563 Rizal Street, Poblacion, Mangaldan, Pangasinan`],
     ["EMAIL :", "renzovisperas07@gmail.com"],
   ];
 
@@ -37,12 +37,12 @@ const Footer = () => {
             flexDirection: "column",
             gap: "2rem",
             width: "40%",
-            paddingTop: "3rem",
+            paddingTop: "2rem",
           }}
         >
           {contactInfo.map((contact, index) => {
             return (
-              <Box key={index}>
+              <Box key={index} sx={{ maxWidth: "15rem" }}>
                 <Typography
                   variant="body2"
                   component="h3"
@@ -51,7 +51,7 @@ const Footer = () => {
                 >
                   {contact[0]}
                 </Typography>
-                <Typography variant="body2">{contact[1]}</Typography>
+                <Typography variant="body1">{contact[1]}</Typography>
               </Box>
             );
           })}
