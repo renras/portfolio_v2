@@ -5,6 +5,7 @@ import { getProjects } from "./store/appSlice";
 
 import NavBar from "./Components/NavBar/NavBar";
 import Home from "./Pages/Home/Home";
+import DrawerContainer from "./Components/DrawerContainer/DrawerContainer";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline>
+        <DrawerContainer />
         <NavBar />
         <Home />
       </CssBaseline>

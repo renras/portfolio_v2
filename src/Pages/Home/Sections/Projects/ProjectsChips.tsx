@@ -20,7 +20,7 @@ const ProjectsChips = () => {
       direction="row"
       spacing={2}
       justifyContent="center"
-      sx={{ marginTop: "5rem" }}
+      sx={{ marginTop: "5rem", flexWrap: "wrap" }}
     >
       {technologies.map((technology, index) => {
         return (

@@ -17,6 +17,7 @@ interface CounterState {
   projects: any[];
   technologies: string[];
   activeChip: string;
+  showDrawer: boolean;
 }
 
 const initialState: CounterState = {
@@ -24,6 +25,7 @@ const initialState: CounterState = {
   projects: [],
   technologies: [],
   activeChip: "All",
+  showDrawer: false,
 };
 
 export const appSlice = createSlice({
@@ -32,6 +34,9 @@ export const appSlice = createSlice({
   reducers: {
     setActiveChip: (state, action: PayloadAction<string>) => {
       state.activeChip = action.payload;
+    },
+    showDrawer: (state, action: PayloadAction<boolean>) => {
+      state.showDrawer = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -61,6 +66,6 @@ export const appSlice = createSlice({
   },
 });
 
-export const { setActiveChip } = appSlice.actions;
+export const { setActiveChip, showDrawer } = appSlice.actions;
 
 export default appSlice.reducer;
