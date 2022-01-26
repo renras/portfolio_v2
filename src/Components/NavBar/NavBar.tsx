@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 const NavBar = () => {
-  const buttons: string[] = ["Home", "About", "Works", "Contact"];
+  const buttons: string[] = ["Home", "About", "Projects", "Contact"];
 
   return (
     <AppBar position="fixed">

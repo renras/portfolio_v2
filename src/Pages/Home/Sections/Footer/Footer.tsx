@@ -3,7 +3,7 @@ import { Container, Box, Paper, Typography } from "@mui/material";
 import Form from "./Form";
 import Title from "../../../../Components/Title/Title";
 
-const Contact = () => {
+const Footer = () => {
   const contactInfo: any[] = [
     ["PHONE :", "+639455820565"],
     ["ADDRESS", `#563 Rizal Street, Poblacion,\nMangaldan, Pangasinan`],
@@ -12,6 +12,7 @@ const Contact = () => {
 
   return (
     <Paper
+      component="footer"
       elevation={1}
       sx={{
         display: "flex",
@@ -61,4 +62,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Footer;
