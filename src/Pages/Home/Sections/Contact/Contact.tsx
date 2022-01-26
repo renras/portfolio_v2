@@ -1,56 +1,61 @@
 import React from "react";
-import { Container, Box, Paper, TextField, Button, Grid } from "@mui/material";
+import { Container, Box, Paper, Typography } from "@mui/material";
+import Form from "./Form";
+import Title from "../../../../Components/Title/Title";
 
 const Contact = () => {
+  const contactInfo: any[] = [
+    ["PHONE :", "+639455820565"],
+    ["ADDRESS", `#563 Rizal Street, Poblacion,\nMangaldan, Pangasinan`],
+    ["EMAIL :", "renzovisperas07@gmail.com"],
+  ];
+
   return (
-    <Paper elevation={1}>
-      <Container maxWidth="lg" sx={{ padding: "10rem 0" }}>
-        <Box sx={{ display: "inline-block", width: "40%" }}>
-          Contact Details
-        </Box>
-        <Grid
-          component="form"
-          action="https://formsubmit.co/renzovisperas07@gmail.com"
-          method="POST"
-          sx={{ display: "inline-flex", width: "60%" }}
-          container
-          spacing={2}
+    <Paper
+      elevation={1}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10rem",
+        padding: "10rem 0",
+        justifyContent: "center",
+      }}
+    >
+      <Title center sx={{ margin: "auto" }}>
+        Contact Me
+      </Title>
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "2rem",
+            width: "40%",
+            paddingTop: "3rem",
+          }}
         >
-          <Grid item xs={6}>
-            <TextField required type="text" placeholder="Name" fullWidth />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField required type="email" placeholder="Email" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField required type="text" placeholder="Subject" fullWidth />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              multiline
-              required
-              type="text"
-              placeholder="Message"
-              fullWidth
-              rows={5}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              variant="contained"
-              type="submit"
-              size="large"
-              sx={{
-                fontWeight: "bold",
-                marginTop: "1rem",
-                marginLeft: "auto",
-                display: "block",
-              }}
-            >
-              Send Message
-            </Button>
-          </Grid>
-        </Grid>
+          {contactInfo.map((contact, index) => {
+            return (
+              <Box key={index}>
+                <Typography
+                  variant="body2"
+                  component="h3"
+                  color="primary"
+                  gutterBottom
+                >
+                  {contact[0]}
+                </Typography>
+                <Typography variant="body2">{contact[1]}</Typography>
+              </Box>
+            );
+          })}
+        </Box>
+        <Form />
       </Container>
     </Paper>
   );
