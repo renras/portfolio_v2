@@ -26,6 +26,7 @@ const ListOfProjects = () => {
     <Box
       sx={{
         display: "flex",
+        flexFlow: "row wrap",
         gap: "5rem",
         marginTop: "5rem",
         justifyContent: "center",

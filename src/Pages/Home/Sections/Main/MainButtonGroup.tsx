@@ -8,7 +8,7 @@ const MainButtonGroup = () => {
     <Box
       sx={{
         display: "flex",
-        gap: "2rem",
+        columnGap: "2rem",
         justifyContent: "center",
         marginTop: "5rem",
       }}

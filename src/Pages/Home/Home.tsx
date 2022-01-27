@@ -3,7 +3,7 @@ import React from "react";
 import Main from "./Sections/Main/Main";
 import AboutMe from "./Sections/AboutMe/AboutMe";
 import Projects from "./Sections/Projects/Projects";
-import Footer from "./Sections/Footer/Footer";
+import Contact from "./Sections/Contact/Contact";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Main />
       <AboutMe />
       <Projects />
-      <Footer />
+      <Contact />
     </>
   );
 };

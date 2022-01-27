@@ -7,9 +7,20 @@ const AboutMe = () => {
   return (
     <Paper elevation={1}>
       <Container maxWidth="xl">
-        <Box sx={{ padding: "10rem 0", display: "flex", gap: "5rem" }}>
+        <Box
+          sx={{
+            padding: "10rem 0",
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: "5rem",
+          }}
+        >
           <AboutMeLeftSection />
-          <Divider orientation="vertical" flexItem />
+          <Divider
+            orientation="vertical"
+            flexItem
+            sx={{ display: { xs: "none", md: "block" } }}
+          />
           <AboutMeRightSection />
         </Box>
       </Container>
