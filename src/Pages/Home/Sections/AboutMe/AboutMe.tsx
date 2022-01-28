@@ -5,7 +5,7 @@ import AboutMeRightSection from "./AboutMeRightSection";
 
 const AboutMe = () => {
   return (
-    <Paper elevation={1}>
+    <Paper id="aboutme" elevation={1}>
       <Container maxWidth="xl">
         <Box
           sx={{

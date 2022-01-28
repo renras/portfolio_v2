@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 import Title from "../../../../Components/Title/Title";
 import ProjectsChips from "./ProjectsChips";
 import ListOfProjects from "./ListOfProjects";
 
 const Work = () => {
   return (
-    <Container maxWidth="xl">
+    <Container id="projects" maxWidth="xl">
       <Container
         maxWidth="lg"
         sx={{

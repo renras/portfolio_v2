@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Main from "./Sections/Main/Main";
 import AboutMe from "./Sections/AboutMe/AboutMe";
@@ -8,10 +8,12 @@ import Contact from "./Sections/Contact/Contact";
 const Home = () => {
   return (
     <>
-      <Main />
-      <AboutMe />
-      <Projects />
-      <Contact />
+      <main id="main">
+        <Main />
+        <AboutMe />
+        <Projects />
+        <Contact />
+      </main>
     </>
   );
 };

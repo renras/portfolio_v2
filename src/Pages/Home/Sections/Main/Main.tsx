@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
 import MainButtonGroup from "./MainButtonGroup";
-import LinkedIn from "@mui/icons-material/LinkedIn";
-import GitHub from "@mui/icons-material/GitHub";
 
 const Main = () => {
   return (

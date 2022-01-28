@@ -8,7 +8,7 @@ import Title from "../../../../Components/Title/Title";
 
 const Contact = () => {
   return (
-    <footer>
+    <footer id="footer">
       <Paper
         component="footer"
         elevation={1}
