@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, Grid, Paper } from "@mui/material";
+import { TextField, Button, Grid, Container } from "@mui/material";
 
 const Form = () => {
   const textFields = [
@@ -28,7 +28,9 @@ const Form = () => {
       method="POST"
       container
       spacing={2}
-      sx={{ display: "inline-flex", width: "60%" }}
+      sx={{
+        flex: "2 1 0",
+      }}
     >
       {textFields.map((textField, index) => {
         return (

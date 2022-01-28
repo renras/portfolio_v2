@@ -16,13 +16,21 @@ const ContactInfo = () => {
         display: "flex",
         flexDirection: "column",
         gap: "2rem",
-        width: "40%",
         paddingTop: "1rem",
+        flex: "1 1 0",
       }}
     >
       {contactInfo.map((contact, index) => {
         return (
-          <Box key={index} sx={{ maxWidth: "15rem" }}>
+          <Box
+            key={index}
+            sx={{
+              maxWidth: { md: "15rem" },
+              display: { xs: "flex", md: "block" },
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: "1rem", md: "0" },
+            }}
+          >
             <Typography
               variant="body2"
               component="h3"

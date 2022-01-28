@@ -20,7 +20,7 @@ const NavBar = () => {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
             RZV

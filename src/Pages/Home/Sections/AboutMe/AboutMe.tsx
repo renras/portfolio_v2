@@ -6,7 +6,7 @@ import AboutMeRightSection from "./AboutMeRightSection";
 const AboutMe = () => {
   return (
     <Paper id="aboutme" elevation={1}>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Box
           sx={{
             padding: "10rem 0",

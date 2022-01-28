@@ -27,6 +27,9 @@ const Contact = () => {
           maxWidth="lg"
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "center",
+            gap: { xs: "5rem", md: "10rem" },
           }}
         >
           <ContactInfo />
