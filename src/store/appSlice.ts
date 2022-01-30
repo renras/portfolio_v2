@@ -18,6 +18,7 @@ interface CounterState {
   technologies: string[];
   activeChip: string;
   showDrawer: boolean;
+  isNavSticky: boolean;
 }
 
 const initialState: CounterState = {
@@ -26,6 +27,7 @@ const initialState: CounterState = {
   technologies: [],
   activeChip: "All",
   showDrawer: false,
+  isNavSticky: false,
 };
 
 export const appSlice = createSlice({
@@ -37,6 +39,9 @@ export const appSlice = createSlice({
     },
     showDrawer: (state, action: PayloadAction<boolean>) => {
       state.showDrawer = action.payload;
+    },
+    setIsNavSticky: (state, action: PayloadAction<boolean>) => {
+      state.isNavSticky = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -66,6 +71,6 @@ export const appSlice = createSlice({
   },
 });
 
-export const { setActiveChip, showDrawer } = appSlice.actions;
+export const { setActiveChip, showDrawer, setIsNavSticky } = appSlice.actions;
 
 export default appSlice.reducer;

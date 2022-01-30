@@ -7,6 +7,7 @@ import { Link } from "react-scroll";
 const NavLinks = ({ sx }: { sx?: Object }) => {
   const dispatch = useAppDispatch();
   const buttons: any[] = [
+    { name: "Home", href: "main" },
     { name: "About", href: "aboutme" },
     { name: "Projects", href: "projects" },
     { name: "Contact", href: "footer" },

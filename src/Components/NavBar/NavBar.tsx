@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { showDrawer } from "../../store/appSlice";
 import {
   AppBar,
@@ -13,13 +13,14 @@ import NavLinks from "../NavLinks/NavLinks";
 
 const NavBar = () => {
   const dispatch = useAppDispatch();
+  const isNavSticky = useAppSelector((state) => state.app.isNavSticky);
 
   const clickHandler = (bool: boolean): void => {
     dispatch(showDrawer(bool));
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position={isNavSticky ? "fixed" : "absolute"}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>

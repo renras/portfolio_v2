@@ -1,15 +1,47 @@
-import React from "react";
-import { Container, Typography, Box, Button } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import { useAppDispatch } from "../../../../store/hooks";
+import { setIsNavSticky } from "../../../../store/appSlice";
+
+import { Container, Typography } from "@mui/material";
 import MainButtonGroup from "./MainButtonGroup";
 
 const Main = () => {
+  const mainRef = useRef(null);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const main = mainRef.current;
+
+    const stickyNav = (entries: any): void => {
+      const [entry] = entries;
+      dispatch(setIsNavSticky(!entry.isIntersecting));
+      console.log(entry.isIntersecting);
+    };
+
+    const options: { root: any; threshold: number; rootMargin: string } = {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px",
+    };
+
+    const headerObserver = new IntersectionObserver(stickyNav, options);
+
+    headerObserver.observe(main);
+
+    return () => {
+      headerObserver.unobserve(main);
+    };
+  }, []);
+
   return (
     <Container
+      id="main"
       maxWidth="xl"
       sx={{
         minHeight: "100vh",
         position: "relative",
       }}
+      ref={mainRef}
     >
       <Container
         maxWidth="md"
